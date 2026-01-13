@@ -50,7 +50,7 @@ where country_name = 'United Kingdom';
 --------------------------------------------------------------------------------------------------
 
 select
-	regions.region_name, employees.first_name, employees.salary
+	distinct regions.region_name
 from
 	employees
 	join departments using (department_id)
@@ -60,31 +60,49 @@ from
 
 where employees.salary < 10000;
 
+---------------------------------------------------------------------------------------------------
+
+select
+	count(*)
+from
+	employees
+select
+	count(*)
+from
+	employees
+	join departments using (department_id)
+update employees
+set
+	department_id = null
+where
+	employees.employee_id = 100;
+
+select
+	*
+from
+	employees
+	full join departments using (department_id);
+
+-- seleccionar el nombre de aquellos departamentos que no tienen empleados
+
+select departments.department_name
+from employees right join departments using (department_id)
+where employees.employee_id is null;
 
 
 
-	
-	/*
-	
-	
-	    ╔╗╔╗╔═╦╦╦═╗╔══╦╦╦═╦╦═╗
-		║║║║║║║║║╚╣║║║║║║╚╣║╔╝
-		║║║╚╣║║║║╔╣║║║║║╠╗║║╚╗
-		╚╝╚═╩═╩═╩═╝╚╩╩╩═╩═╩╩═╝
 
-		⣿⣿⣿⣿⣿⣿⠿⢋⣥⣴⣶⣶⣶⣬⣙⠻⠟⣋⣭⣭⣭⣭⡙⠻⣿⣿⣿⣿⣿
-		⣿⣿⣿⣿⡿⢋⣴⣿⣿⠿⢟⣛⣛⣛⠿⢷⡹⣿⣿⣿⣿⣿⣿⣆⠹⣿⣿⣿⣿
-		⣿⣿⣿⡿⢁⣾⣿⣿⣴⣿⣿⣿⣿⠿⠿⠷⠥⠱⣶⣶⣶⣶⡶⠮⠤⣌⡙⢿⣿
-		⣿⡿⢛⡁⣾⣿⣿⣿⡿⢟⡫⢕⣪⡭⠥⢭⣭⣉⡂⣉⡒⣤⡭⡉⠩⣥⣰⠂⠹
-		⡟⢠⣿⣱⣿⣿⣿⣏⣛⢲⣾⣿⠃⠄⠐⠈⣿⣿⣿⣿⣿⣿⠄⠁⠃⢸⣿⣿⡧
-		⢠⣿⣿⣿⣿⣿⣿⣿⣿⣇⣊⠙⠳⠤⠤⠾⣟⠛⠍⣹⣛⣛⣢⣀⣠⣛⡯⢉⣰
-		⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡶⠶⢒⣠⣼⣿⣿⣛⠻⠛⢛⣛⠉⣴⣿⣿
-		⣿⣿⣿⣿⣿⣿⣿⡿⢛⡛⢿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡈⢿⣿
-		⣿⣿⣿⣿⣿⣿⣿⠸⣿⡻⢷⣍⣛⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢇⡘⣿
-		⣿⣿⣿⣿⣿⣿⣿⣷⣝⠻⠶⣬⣍⣛⣛⠓⠶⠶⠶⠤⠬⠭⠤⠶⠶⠞⠛⣡⣿
-		⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣬⣭⣍⣙⣛⣛⣛⠛⠛⠛⠿⠿⠿⠛⣠⣿⣿
-		⣦⣈⠉⢛⠻⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣁⣴⣾⣿⣿⣿⣿
-		⣿⣿⣿⣶⣮⣭⣁⣒⣒⣒⠂⠠⠬⠭⠭⠭⢀⣀⣠⣄⡘⠿⣿⣿⣿⣿⣿⣿⣿
-		⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡈⢿⣿⣿⣿⣿⣿
-			
-	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
