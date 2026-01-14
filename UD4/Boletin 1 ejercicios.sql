@@ -19,8 +19,6 @@ WHERE m.last_name LIKE 'D%'
    OR m.last_name LIKE 'H%' 
    OR m.last_name LIKE 'S%';
 
-select *
-from dependents
+select CURRENT_DATE - '2007-02-07'::date as "Número de dias en la tierra";
 
-select *
-from employees
+select age(current_date, '2007-02-07')
