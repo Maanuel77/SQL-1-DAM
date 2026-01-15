@@ -22,3 +22,15 @@ WHERE m.last_name LIKE 'D%'
 select CURRENT_DATE - '2007-02-07'::date as "Número de dias en la tierra";
 
 select age(current_date, '2007-02-07')
+
+select to_char (CURRENT_DATE, 'Day, DD-MM-YYYY')
+
+select INTERVAL '1 year 2 months 3 days 04:05:06';
+
+select to_char (current_date, 'TMMonth');
+
+ALTER SYSTEM SET lc_time = 'es_ES.UTF-8';
+
+
+
+

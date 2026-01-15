@@ -1,3 +1,4 @@
+
 select
 	first_name,
 	last_name,
@@ -77,6 +78,7 @@ set
 where
 	employees.employee_id = 100;
 
+
 select
 	*
 from
@@ -89,7 +91,25 @@ select departments.department_name
 from employees right join departments using (department_id)
 where employees.employee_id is null;
 
+ ---------------------
+ -- COSAS DE FECHAS --
+ ---------------------
+ 
+select estacion, fecha, precipitacion_total
+from climatologia 
+where 
+-- fecha between make_date (2019,4,1)
+-- and make_date (2019,4,30)
+to_char (fecha, 'MM/YYYY') = '04/2019';
+extract (from month )
+and provincia = 'Sevilla'
 
+------------------------------------------------------------------------------------
+
+select * 
+from climatologia
+where provincia in ('Cuenca', 'Guadalajara', 'Toledo', 'Albacete', 'Ciudad Real')
+and fecha BETWEEN make_date (2019,3,21)
 
 
 
