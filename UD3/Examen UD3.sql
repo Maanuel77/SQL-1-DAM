@@ -1,3 +1,4 @@
+
 /*
 EXAMEN SQL UD3
 */
@@ -32,7 +33,8 @@ where
 		or estacion like '%ó%'
 		or estacion like '%ú%'
 	)
-	and fecha::text like '2019-01%';
+	and fecha::text like '2019-01%'
+	order by estacion asc;
 
 --EJERCICIO 3
 
