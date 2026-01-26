@@ -1,4 +1,5 @@
 
+
 /*
 EXAMEN SQL UD3
 */
@@ -27,11 +28,11 @@ from
 	climatologia
 where
 	(
-		estacion like '%á%'
-		or estacion like '%é%'
-		or estacion like '%í%'
-		or estacion like '%ó%'
-		or estacion like '%ú%'
+		estacion ilike '%á%'
+		or estacion ilike '%é%'
+		or estacion ilike '%í%'
+		or estacion ilike '%ó%'
+		or estacion ilike '%ú%'
 	)
 	and fecha::text like '2019-01%'
 	order by estacion asc;
