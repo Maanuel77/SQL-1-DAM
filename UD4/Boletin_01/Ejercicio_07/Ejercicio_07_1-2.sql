@@ -1,3 +1,7 @@
+select *
+from employees
+
+
 /*
 --1
 (HR) Selecciona el número de empleados que fueron contratados en el 
@@ -19,7 +23,7 @@ where to_char (employees.hire_date, 'YYYY') = '1997'
 trabajadores de Administration en Asia.
 */
 
-select round(avg(max_salary),2)
+select coalesce(avg(max_salary),0) as media_salario_max_Asia
 from jobs 
 	join employees using (job_id)
 	join departments using (department_id)
