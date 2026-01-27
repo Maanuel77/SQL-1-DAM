@@ -25,9 +25,9 @@ order by
 	o.fecha_operacion desc;
 /*
 --4
-(INMO) Modifica la consulta anterior para que las viviendas 
-que fueran vendidas en un plazo de entre 35 y 45 días 
-desde que se dieron de alta en la inmobiliaria.
+(INMO) Modifica la consulta anterior para que las viviendas
+que fueran vendidas en un plazo de entre 35 y 45
+días desde que se dieron de alta en la inmobiliaria.
 
 */
 select
@@ -51,7 +51,7 @@ order by
 --5
  (INMO) Calcula el precio máximo y precio mínimo por metro 
  cuadrado de venta de inmuebles que no sean viviendas 
- (no sean Piso o Casa) en provincias que contengan una n 
+ (no sean Piso o Casa) en provincias que contengan una 
  (mayúscula o minúscula), siempre que los inmuebles se 
  hayan vendido en un mes que escrito de forma completa 
  en inglés tenga entre 5 y 7 caracteres.
@@ -74,3 +74,41 @@ where
 	and i.provincia ilike '%n%'
 	and length(trim(to_char(o.fecha_operacion, 'Month'))) between 5 and 7;
 
+-- 6
+
+select
+	round(avg(descuento), 2)
+from
+	vuelo v
+	join aeropuerto a_desde on (v.desde = a_desde.id_aeropuerto)
+	join aeropuerto a_hasta on (v.hasta = a_hasta.id_aeropuerto)
+where
+	a_desde.ciudad in (
+		'Sevilla',
+		'Madrid',
+		'Málaga',
+		'Barcelona',
+		'Bilbao'
+	)
+	and a_hasta.ciudad in (
+		'Sevilla',
+		'Madrid',
+		'Málaga',
+		'Barcelona',
+		'Bilbao'
+	)
+	and extract(
+		isodow
+		from
+			salida
+	) between 6 and 7
+	or (
+		(
+			extract(
+				isodow
+				from
+					salida
+			) = 5
+			and cast(v.salida as time) >= '15:00'
+		)
+	);
