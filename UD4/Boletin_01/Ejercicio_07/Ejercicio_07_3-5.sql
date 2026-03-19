@@ -1,4 +1,5 @@
 
+
 /*
 --3
 (INMO) Selecciona el nombre del comprador, el nombre del vendedor,
@@ -42,6 +43,7 @@ from
 	join inmueble i using (id_inmueble)
 	join tipo t on (t.id_tipo = i.tipo_inmueble)
 where
+
 	t.nombre in ('Casa', 'Piso')
 	and age (o.fecha_operacion, i.fecha_alta) between '35' and '45'
 	and i.provincia in ('Huelva', 'Sevilla', 'Almería')
