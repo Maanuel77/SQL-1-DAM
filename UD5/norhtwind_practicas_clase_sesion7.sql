@@ -1,3 +1,4 @@
+
 -- Seleccionar el producto más caro de cada categoría
 -- category_name, product_name, unit_price
 
